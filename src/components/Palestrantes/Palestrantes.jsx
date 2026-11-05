@@ -15,22 +15,28 @@ function Palestrantes({ palestrantes }) {
       <p className="palestrantes__subtitulo">Conecte-se com os palestrantes no LinkedIn.</p>
 
       <ul className="palestrantes__lista">
-        {palestrantes.map(({ id, nome, linkedin }) => (
+        {palestrantes.map(({ id, nome, linkedin, foto }) => (
           <li key={id} className="palestrante">
-            <span className="palestrante__avatar" aria-hidden="true">
-              {iniciais(nome)}
-            </span>
-            <span className="palestrante__nome">{nome}</span>
-            <a
-              className="palestrante__linkedin"
-              href={linkedin}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`LinkedIn de ${nome}`}
-            >
-              <FaLinkedin aria-hidden="true" />
-              LinkedIn
-            </a>
+            {foto ? (
+              <img className="palestrante__avatar" src={foto} alt={`Foto de ${nome}`} />
+            ) : (
+              <span className="palestrante__avatar" aria-hidden="true">
+                {iniciais(nome)}
+              </span>
+            )}
+            <div className="palestrante__info">
+              <span className="palestrante__nome">{nome}</span>
+              <a
+                className="palestrante__linkedin"
+                href={linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`LinkedIn de ${nome}`}
+              >
+                <FaLinkedin aria-hidden="true" />
+                LinkedIn
+              </a>
+            </div>
           </li>
         ))}
       </ul>

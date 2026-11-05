@@ -17,10 +17,10 @@ function App() {
       <Hero />
       <main>
         <MaterialList materiais={materiais} />
-        <Palestrantes palestrantes={palestrantes} />
         <Callout>
           Você não prexisa ter toda a sua carreira planejada, mas pode começar a explorar seus caminhos HOJE.
         </Callout>
+        <Palestrantes palestrantes={palestrantes} />
       </main>
       <Footer />
     </>

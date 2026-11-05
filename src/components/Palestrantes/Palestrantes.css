@@ -1,5 +1,5 @@
 .palestrantes {
-  padding-bottom: clamp(40px, 6vw, 72px);
+  padding-bottom: 32px;
 }
 
 .palestrantes__subtitulo {
@@ -32,9 +32,11 @@
   flex: none;
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--cor-principal);
   background: linear-gradient(160deg, var(--hero-inicio), var(--hero-fim));
   color: #ffffff;
   font-family: var(--fonte-titulo);
@@ -42,9 +44,17 @@
   font-size: 18px;
 }
 
-.palestrante__nome {
+.palestrante__info {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.palestrante__nome {
+  overflow-wrap: anywhere;
   font-family: var(--fonte-titulo);
   font-weight: 800;
   font-size: 17px;
@@ -56,8 +66,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: 40px;
-  padding: 0 14px;
+  height: 34px;
+  padding: 0 12px;
   border: 1px solid var(--cor-principal);
   border-radius: 4px;
   color: var(--cor-principal);
