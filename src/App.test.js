@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
+import { materiais } from './data/materiais';
 
 beforeEach(() => {
   localStorage.clear();
@@ -9,7 +10,7 @@ beforeEach(() => {
 test('lista os materiais com link de download', () => {
   render(<App />);
   const botoes = screen.getAllByRole('link', { name: 'Baixar' });
-  expect(botoes).toHaveLength(2);
+  expect(botoes).toHaveLength(materiais.length);
   expect(botoes[0]).toHaveAttribute('href', expect.stringMatching(/\.pdf$/));
 });
 

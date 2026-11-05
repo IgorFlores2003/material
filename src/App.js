@@ -10,15 +10,13 @@ function App() {
   return (
     <>
       <Navbar tema={tema} onAlternarTema={alternarTema} />
-      <div className="container">
-        <Header />
-        <main>
-          <MaterialList materiais={materiais} />
-        </main>
-        <footer className="rodape">
-          Semana da Administração &amp; Ciências Contábeis · Murilo e Yasmim
-        </footer>
-      </div>
+      <Header />
+      <main className="conteudo">
+        <MaterialList materiais={materiais} />
+      </main>
+      <footer className="rodape conteudo">
+        Semana da Administração &amp; Ciências Contábeis · Murilo e Yasmim
+      </footer>
     </>
   );
 }

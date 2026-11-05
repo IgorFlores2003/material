@@ -51,22 +51,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-  max-width: 680px;
+:root {
+  --espaco-lateral: clamp(16px, 4vw, 48px);
+}
+
+#root {
   min-height: 100vh;
-  margin: 0 auto;
-  padding: 0 20px 32px;
   display: flex;
   flex-direction: column;
 }
 
+.conteudo {
+  padding-left: var(--espaco-lateral);
+  padding-right: var(--espaco-lateral);
+}
+
 main {
   flex: 1;
+  padding-top: 32px;
+  padding-bottom: 48px;
 }
 
 .rodape {
-  margin-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid var(--cor-borda);
   font-size: 13px;
   color: var(--cor-texto-suave);
-  align-self: center;
 }

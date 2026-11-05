@@ -2,19 +2,13 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--cor-fundo);
-  border-bottom: 1px solid var(--cor-borda);
-}
-
-.navbar__conteudo {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  max-width: 680px;
   height: 60px;
-  margin: 0 auto;
-  padding: 0 20px;
+  background: var(--cor-fundo);
+  border-bottom: 1px solid var(--cor-borda);
 }
 
 .navbar__evento {
