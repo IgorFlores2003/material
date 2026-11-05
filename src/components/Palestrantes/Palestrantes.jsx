@@ -26,16 +26,18 @@ function Palestrantes({ palestrantes }) {
             )}
             <div className="palestrante__info">
               <span className="palestrante__nome">{nome}</span>
-              <a
-                className="palestrante__linkedin"
-                href={linkedin}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`LinkedIn de ${nome}`}
-              >
-                <FaLinkedin aria-hidden="true" />
-                LinkedIn
-              </a>
+              {linkedin && (
+                <a
+                  className="palestrante__linkedin"
+                  href={linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`LinkedIn de ${nome}`}
+                >
+                  <FaLinkedin aria-hidden="true" />
+                  LinkedIn
+                </a>
+              )}
             </div>
           </li>
         ))}

@@ -1,4 +1,5 @@
 import Callout from './components/Callout/Callout';
+import Fichas from './components/Fichas/Fichas';
 import Footer from './components/Footer/Footer';
 import Hero from './components/Hero/Hero';
 import MaterialList from './components/MaterialList/MaterialList';
@@ -17,6 +18,7 @@ function App() {
       <Hero />
       <main>
         <MaterialList materiais={materiais} />
+        <Fichas />
         <Callout>
           Você não precisa ter toda a sua carreira planejada, mas pode começar a explorar seus caminhos HOJE.
         </Callout>

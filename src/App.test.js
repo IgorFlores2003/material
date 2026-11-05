@@ -18,10 +18,12 @@ test('lista os materiais com link de download', () => {
 test('mostra o LinkedIn de cada palestrante', () => {
   render(<App />);
   palestrantes.forEach(({ nome, linkedin }) => {
-    expect(screen.getByRole('link', { name: `LinkedIn de ${nome}` })).toHaveAttribute(
-      'href',
-      linkedin
-    );
+    const link = screen.queryByRole('link', { name: `LinkedIn de ${nome}` });
+    if (linkedin) {
+      expect(link).toHaveAttribute('href', linkedin);
+    } else {
+      expect(link).not.toBeInTheDocument();
+    }
   });
 });
 
@@ -42,4 +44,37 @@ test('começa com o tema salvo anteriormente', () => {
   render(<App />);
   expect(document.documentElement.dataset.theme).toBe('dark');
   expect(screen.getByRole('button', { name: 'Mudar para tema claro' })).toBeInTheDocument();
+});
+
+test('não salva o PDF com respostas obrigatórias vazias', () => {
+  window.print = jest.fn();
+  render(<App />);
+  fireEvent.click(screen.getByRole('button', { name: /Salvar em PDF/ }));
+  expect(window.print).not.toHaveBeenCalled();
+  expect(screen.getByRole('alert')).toHaveTextContent('Nome do entrevistador');
+  expect(screen.getByLabelText(/Nome do entrevistador/)).toHaveFocus();
+
+  fireEvent.change(screen.getByLabelText(/Nome do entrevistador/), { target: { value: 'Ana' } });
+  fireEvent.change(screen.getByLabelText(/Nome do candidato/), { target: { value: 'Bia' } });
+  fireEvent.click(screen.getAllByRole('radio')[1]);
+  fireEvent.change(screen.getByLabelText(/Um ponto positivo/), { target: { value: 'Clareza' } });
+  fireEvent.change(screen.getByLabelText(/Uma sugestão/), { target: { value: 'Exemplos' } });
+  expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole('button', { name: /Salvar em PDF/ }));
+  expect(window.print).toHaveBeenCalledTimes(1);
+});
+
+test('permite escolher e preencher as fichas', () => {
+  render(<App />);
+  const nome = screen.getByLabelText(/Nome do entrevistador/);
+  fireEvent.change(nome, { target: { value: 'Ana' } });
+  expect(nome).toHaveValue('Ana');
+
+  fireEvent.click(screen.getByRole('tab', { name: /Entrevistado$/ }));
+  expect(screen.getByLabelText(/^Nome:/)).toHaveValue('');
+  expect(screen.getByText('Prepare suas respostas')).toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole('tab', { name: /Entrevistador$/ }));
+  expect(screen.getByLabelText(/Nome do entrevistador/)).toHaveValue('Ana');
 });
