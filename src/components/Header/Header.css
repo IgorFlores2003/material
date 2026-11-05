@@ -1,12 +1,5 @@
 .header {
-  padding: 48px 0 28px;
-}
-
-.header__evento {
-  margin: 0 0 8px;
-  font-size: 14px;
-  color: var(--cor-principal);
-  font-weight: 600;
+  padding: 40px 0 28px;
 }
 
 .header__titulo {
