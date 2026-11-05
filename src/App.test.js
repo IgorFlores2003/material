@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 import { materiais } from './data/materiais';
+import { palestrantes } from './data/palestrantes';
 
 beforeEach(() => {
   localStorage.clear();
@@ -12,6 +13,16 @@ test('lista os materiais com link de download', () => {
   const botoes = screen.getAllByRole('link', { name: 'Baixar' });
   expect(botoes).toHaveLength(materiais.length);
   expect(botoes[0]).toHaveAttribute('href', expect.stringMatching(/\.pdf$/));
+});
+
+test('mostra o LinkedIn de cada palestrante', () => {
+  render(<App />);
+  palestrantes.forEach(({ nome, linkedin }) => {
+    expect(screen.getByRole('link', { name: `LinkedIn de ${nome}` })).toHaveAttribute(
+      'href',
+      linkedin
+    );
+  });
 });
 
 test('alterna entre tema claro e escuro e salva a escolha', () => {

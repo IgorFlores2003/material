@@ -2,7 +2,7 @@ export const materiais = [
   {
     id: 'carreira',
     titulo: 'Sua carreira começa antes do diploma',
-    descricao: 'Apresentação do workshop sobre currículo, entrevista e imagem profissional.',
+    descricao: 'Ebook sobre currículo, entrevista e imagem profissional.',
     arquivo: 'Sua_Carreira_Comeca_Antes_do_Diploma.pdf',
     paginas: 80,
     tamanho: '7,5 MB',
@@ -18,7 +18,6 @@ export const materiais = [
   {
     id: 'slides',
     titulo: 'Slides da apresentação',
-    descricao: 'Apresentação dos slides utilizados na sessão de apresentação.',
     arquivo: 'Slides_Apresentacao.pdf',
     paginas: 14,
     tamanho: '2,8 MB',

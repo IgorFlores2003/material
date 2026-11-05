@@ -1,0 +1,94 @@
+.palestrantes {
+  padding-bottom: clamp(40px, 6vw, 72px);
+}
+
+.palestrantes__subtitulo {
+  margin: 0 0 32px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--cor-principal);
+}
+
+.palestrantes__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Mesmo bloco lilás com linha no topo dos cartões de material */
+.palestrante {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--cor-superficie);
+  border-top: 2px solid var(--cor-principal);
+}
+
+.palestrante__avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(160deg, var(--hero-inicio), var(--hero-fim));
+  color: #ffffff;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.palestrante__nome {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: var(--cor-principal-forte);
+}
+
+.palestrante__linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--cor-principal);
+  border-radius: 4px;
+  color: var(--cor-principal);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.palestrante__linkedin svg {
+  font-size: 17px;
+}
+
+.palestrante__linkedin:hover {
+  background: var(--cor-principal);
+  color: var(--cor-sobre-principal);
+}
+
+.palestrante__linkedin:focus-visible {
+  outline: 2px solid var(--cor-principal);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .palestrantes__lista {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .palestrante {
+    padding: 16px 20px;
+  }
+}
