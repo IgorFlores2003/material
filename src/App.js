@@ -18,7 +18,7 @@ function App() {
       <main>
         <MaterialList materiais={materiais} />
         <Callout>
-          Você não prexisa ter toda a sua carreira planejada, mas pode começar a explorar seus caminhos HOJE.
+          Você não precisa ter toda a sua carreira planejada, mas pode começar a explorar seus caminhos HOJE.
         </Callout>
         <Palestrantes palestrantes={palestrantes} />
       </main>
