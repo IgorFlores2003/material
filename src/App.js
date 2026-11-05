@@ -1,4 +1,6 @@
-import Header from './components/Header/Header';
+import Callout from './components/Callout/Callout';
+import Footer from './components/Footer/Footer';
+import Hero from './components/Hero/Hero';
 import MaterialList from './components/MaterialList/MaterialList';
 import Navbar from './components/Navbar/Navbar';
 import { materiais } from './data/materiais';
@@ -10,13 +12,15 @@ function App() {
   return (
     <>
       <Navbar tema={tema} onAlternarTema={alternarTema} />
-      <Header />
-      <main className="conteudo">
+      <Hero />
+      <main>
         <MaterialList materiais={materiais} />
+        <Callout>
+          Você não precisa ter toda a carreira planejada, mas pode começar a explorar seus
+          caminhos agora.
+        </Callout>
       </main>
-      <footer className="rodape conteudo">
-        Semana da Administração &amp; Ciências Contábeis · Murilo e Yasmim
-      </footer>
+      <Footer />
     </>
   );
 }

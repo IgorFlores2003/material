@@ -1,37 +1,49 @@
+/* Paleta tirada dos slides: claro = slides de conteúdo, escuro = slide 8 */
 :root {
-  --cor-principal: #4a2bd1;
+  --cor-principal: #4b25c9;
+  --cor-principal-forte: #311e73;
   --cor-sobre-principal: #ffffff;
-  --cor-texto: #1c1b22;
-  --cor-texto-suave: #5d5b66;
-  --cor-borda: #e4e2ea;
-  --cor-fundo: #ffffff;
+  --cor-lilas: #c9b3fa;
+  --cor-texto: #1d1b2b;
+  --cor-texto-suave: #5b5870;
+  --cor-borda: #e2ddf7;
+  --cor-fundo: #fbfbff;
+  --cor-superficie: #f3f1fe;
+
+  --hero-inicio: #4820a5;
+  --hero-fim: #3c1c92;
+
+  --fonte-titulo: 'Montserrat', 'Arial Black', Arial, sans-serif;
+  --fonte-texto: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+
+  --espaco-lateral: clamp(16px, 5vw, 64px);
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --cor-principal: #a594ff;
-    --cor-sobre-principal: #16141f;
-    --cor-texto: #ecebf2;
-    --cor-texto-suave: #a3a1ad;
-    --cor-borda: #2e2c38;
-    --cor-fundo: #16141f;
+    --cor-principal: #ae9eef;
+    --cor-principal-forte: #d9cffc;
+    --cor-sobre-principal: #1f1350;
+    --cor-texto: #ffffff;
+    --cor-texto-suave: #c9c1ec;
+    --cor-borda: #43358a;
+    --cor-fundo: #1f1350;
+    --cor-superficie: #2c1d6b;
+    color-scheme: dark;
   }
 }
 
 :root[data-theme='dark'] {
-  --cor-principal: #a594ff;
-  --cor-sobre-principal: #16141f;
-  --cor-texto: #ecebf2;
-  --cor-texto-suave: #a3a1ad;
-  --cor-borda: #2e2c38;
-  --cor-fundo: #16141f;
-}
-
-:root {
-  color-scheme: light;
-}
-
-:root[data-theme='dark'] {
+  --cor-principal: #ae9eef;
+  --cor-principal-forte: #d9cffc;
+  --cor-sobre-principal: #1f1350;
+  --cor-texto: #ffffff;
+  --cor-texto-suave: #c9c1ec;
+  --cor-borda: #43358a;
+  --cor-fundo: #1f1350;
+  --cor-superficie: #2c1d6b;
   color-scheme: dark;
 }
 
@@ -41,18 +53,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: var(--cor-fundo);
   color: var(--cor-texto);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--fonte-texto);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-:root {
-  --espaco-lateral: clamp(16px, 4vw, 48px);
 }
 
 #root {
@@ -61,21 +72,35 @@ body {
   flex-direction: column;
 }
 
+main {
+  flex: 1;
+}
+
 .conteudo {
   padding-left: var(--espaco-lateral);
   padding-right: var(--espaco-lateral);
 }
 
-main {
-  flex: 1;
-  padding-top: 32px;
-  padding-bottom: 48px;
+/* Rótulo espaçado em caixa alta, como o rodapé dos slides */
+.rotulo {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
-.rodape {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-top: 1px solid var(--cor-borda);
-  font-size: 13px;
-  color: var(--cor-texto-suave);
+/* Título dos slides: caixa alta pesada, segunda linha em roxo */
+.titulo-secao {
+  margin: 0 0 12px;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: clamp(28px, 4.5vw, 44px);
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--cor-texto);
+}
+
+.titulo-secao span {
+  display: block;
+  color: var(--cor-principal);
 }

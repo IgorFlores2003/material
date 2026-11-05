@@ -1,15 +1,27 @@
+/* Bloco lilás com linha roxa no topo, como os quadros dos slides */
 .material-item {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 20px;
-  border: 1px solid var(--cor-borda);
-  border-radius: 8px;
+  gap: 16px;
+  padding: 24px;
+  background: var(--cor-superficie);
+  border-top: 2px solid var(--cor-principal);
+}
+
+.material-item__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.material-item__numero {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--cor-principal);
 }
 
 .material-item__icone {
-  flex: none;
-  font-size: 28px;
+  font-size: 22px;
   color: var(--cor-principal);
 }
 
@@ -18,13 +30,19 @@
 }
 
 .material-item__titulo {
-  margin: 0 0 6px;
-  font-size: 17px;
-  font-weight: 600;
+  margin: 0 0 10px;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--cor-principal-forte);
 }
 
 .material-item__descricao {
-  margin: 0 0 8px;
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--cor-borda);
   font-size: 15px;
   line-height: 1.45;
   color: var(--cor-texto-suave);
@@ -47,10 +65,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  border-radius: 6px;
+  height: 44px;
+  border-radius: 4px;
   text-decoration: none;
-  font-size: 15px;
 }
 
 .material-item__baixar {
@@ -59,27 +76,35 @@
   padding: 0 16px;
   background: var(--cor-principal);
   color: var(--cor-sobre-principal);
-  font-weight: 600;
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .material-item__baixar:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.12);
 }
 
 .material-item__abrir {
-  width: 40px;
+  width: 44px;
   border: 1px solid var(--cor-borda);
-  color: var(--cor-texto-suave);
-  font-size: 17px;
+  color: var(--cor-principal);
+  font-size: 18px;
 }
 
 .material-item__abrir:hover {
-  color: var(--cor-texto);
-  border-color: var(--cor-texto-suave);
+  border-color: var(--cor-principal);
 }
 
-@media (max-width: 600px) {
+.material-item__baixar:focus-visible,
+.material-item__abrir:focus-visible {
+  outline: 2px solid var(--cor-principal);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
   .material-item {
-    padding: 16px;
+    padding: 20px;
   }
 }

@@ -4,7 +4,7 @@ import './Navbar.css';
 function Navbar({ tema, onAlternarTema }) {
   return (
     <nav className="navbar conteudo">
-      <span className="navbar__evento">V Open Innovation · Univás 2026</span>
+      <span className="navbar__evento rotulo">V Open Innovation 2026</span>
       <ThemeToggle tema={tema} onAlternar={onAlternarTema} />
     </nav>
   );

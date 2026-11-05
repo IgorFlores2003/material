@@ -1,0 +1,15 @@
+.callout {
+  padding-bottom: clamp(40px, 6vw, 72px);
+}
+
+/* Caixa roxa de destaque do slide 2 */
+.callout__texto {
+  margin: 0;
+  max-width: 720px;
+  padding: 24px 28px;
+  background: #4b25c9;
+  color: #ffffff;
+  font-size: clamp(17px, 2.2vw, 21px);
+  font-weight: 700;
+  line-height: 1.4;
+}

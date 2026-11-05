@@ -7,12 +7,24 @@
   justify-content: space-between;
   gap: 16px;
   height: 60px;
-  background: var(--cor-fundo);
-  border-bottom: 1px solid var(--cor-borda);
+  background: var(--hero-fim);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .navbar__evento {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--cor-principal);
+  color: #ffffff;
+}
+
+/* O botão de tema fica sobre o roxo em qualquer tema */
+.navbar .theme-toggle {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar .theme-toggle:hover {
+  border-color: #ffffff;
+}
+
+.navbar .theme-toggle:focus-visible {
+  outline-color: var(--cor-lilas);
 }

@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.footer__evento {
+  color: var(--cor-texto-suave);
+}
+
+.footer__creditos {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--cor-texto-suave);
+}

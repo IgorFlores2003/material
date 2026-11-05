@@ -2,17 +2,20 @@ import { FaRegFilePdf } from 'react-icons/fa';
 import { FiDownload, FiExternalLink } from 'react-icons/fi';
 import './MaterialItem.css';
 
-function MaterialItem({ material }) {
+function MaterialItem({ material, numero }) {
   const { titulo, descricao, arquivo, paginas, tamanho } = material;
   const url = `${process.env.PUBLIC_URL}/material/${arquivo}`;
   const rotuloPaginas = paginas === 1 ? 'página' : 'páginas';
 
   return (
     <li className="material-item">
-      <FaRegFilePdf className="material-item__icone" aria-hidden="true" />
+      <div className="material-item__topo">
+        <span className="material-item__numero">{String(numero).padStart(2, '0')}</span>
+        <FaRegFilePdf className="material-item__icone" aria-hidden="true" />
+      </div>
 
       <div className="material-item__info">
-        <h2 className="material-item__titulo">{titulo}</h2>
+        <h3 className="material-item__titulo">{titulo}</h3>
         <p className="material-item__descricao">{descricao}</p>
         <p className="material-item__meta">
           PDF · {paginas} {rotuloPaginas} · {tamanho}
