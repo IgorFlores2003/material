@@ -15,4 +15,12 @@ export const materiais = [
     paginas: 2,
     tamanho: '220 KB',
   },
+  {
+    id: 'slides',
+    titulo: 'Slides da apresentação',
+    descricao: 'Apresentação dos slides utilizados na sessão de apresentação.',
+    arquivo: 'Slides_Apresentacao.pdf',
+    paginas: 14,
+    tamanho: '2,8 MB',
+  },
 ];
