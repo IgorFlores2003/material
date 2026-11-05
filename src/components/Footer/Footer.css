@@ -3,18 +3,57 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px 24px;
+  gap: 16px 32px;
   padding-top: 24px;
   padding-bottom: 24px;
   border-top: 1px solid var(--cor-borda);
+  color: var(--cor-texto-suave);
 }
 
 .footer__evento {
-  color: var(--cor-texto-suave);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .footer__creditos {
   font-size: 13px;
   font-style: italic;
-  color: var(--cor-texto-suave);
+}
+
+.footer__autor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.footer__autor strong {
+  color: var(--cor-texto);
+}
+
+.footer__redes {
+  display: flex;
+  gap: 6px;
+}
+
+.footer__redes a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+  color: var(--cor-principal);
+  font-size: 18px;
+}
+
+.footer__redes a:hover {
+  border-color: var(--cor-principal);
+}
+
+.footer__redes a:focus-visible {
+  outline: 2px solid var(--cor-principal);
+  outline-offset: 2px;
 }
