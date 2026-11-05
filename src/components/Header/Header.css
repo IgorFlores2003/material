@@ -1,0 +1,24 @@
+.header {
+  padding: 48px 0 28px;
+}
+
+.header__evento {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--cor-principal);
+  font-weight: 600;
+}
+
+.header__titulo {
+  margin: 0 0 12px;
+  font-size: clamp(26px, 6vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.header__texto {
+  margin: 0;
+  color: var(--cor-texto-suave);
+  font-size: 16px;
+  line-height: 1.5;
+}
